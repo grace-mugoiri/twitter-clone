@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -53,8 +53,11 @@ def users():
 					return jsonify({"error": e})
 			else:
 				return jsonify({"error": "Invalid Form"})
+		# except:
+		# 	return jsonify({"error": "m"})
+				# return ({"error": "Invalid Form"})
 		except:
-			return jsonify({"error": "m"})
+			return ({"error": "Invalid Form"})
 
 if __name__ == "__main__":
 	app.run(debug=True)
