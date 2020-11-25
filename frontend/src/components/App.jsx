@@ -1,12 +1,20 @@
-import React from 'react'
-import Home from "./Home"
-import Navbar from "./Navbar"
+import React from 'react';
+import Home from "./Home";
+import Navbar from "./Navbar";
+import Login from "./Login";
+import Register from "./Register";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 
 function App() {
 	return (
 		<React.Fragment>
 			<Navbar />
-			<Home />
+			<Router>
+				<Route path="/" exact component={Home} />
+				<Route path="/login" exact component={Login} />
+				<Route path="/register" exact component={Register} />
+			</Router>
 		</React.Fragment>
 	)
 }
