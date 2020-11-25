@@ -4,14 +4,14 @@ import axios from 'axios';
 class Login extends Component {
 	login = (e) => {
 		e.preventDefault();
-		axios
-			.post("http://localhost:5000/api/login", {
+		axios.post("http://localhost:5000/api/login",
+			{
 				email: document.getElementById("email").value,
 				pwd: document.getElementById("password").value,
-			});
+			})
 			.then((res) => {
-				console.log(res.data)
-			});
+					console.log(res.data);
+				});
 	};
 
   render() {
