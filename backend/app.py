@@ -112,6 +112,15 @@ def add_tweet():
 		print(e)
 		return jsonify({"error": "Invalid form"})
 
+@app.route("/api/deletetweet", methods=["DELETE"])
+def delete_tweet():
+	try:
+		tid = request.json["tid"]
+		delTweet(tid)
+		return jsonify({"success": "true"})
+	except:
+		return jsonify({"error": "Invalid form"})
+
 @app.route("/api/login", methods=["POST"])
 def login():
     try:
