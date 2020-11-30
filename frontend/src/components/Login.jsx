@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import Alert from './Alert';
 import { login } from '../login';
 
