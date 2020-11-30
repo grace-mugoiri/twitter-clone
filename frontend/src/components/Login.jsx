@@ -51,7 +51,7 @@ class Login extends Component {
                             />
                         </p>
                         <p>
-                            <button type="submit" class="w3-button w3-blue">
+                            <button type="submit" className="w3-button w3-blue">
 								Login
                             </button>
                         </p>

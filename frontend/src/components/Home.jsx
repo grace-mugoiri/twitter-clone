@@ -5,8 +5,8 @@ function Home() {
 		<React.Fragment>
 			<div className="w3-container w3-center w3-blue" style={{ padding: "2rem"}}>
 				<h1 className="w3-jumbo"> Twitter Clone</h1>
-				<button className="w3-button w3-pink" style={{ marginRight: "1rem" }}>Login</button>
-				<button className="w3-button w3-pink">Register</button>
+				<button className="w3-button w3-pink" style={{ marginRight: "1rem" }} onClick={() => (window.location = "/login")}>Login</button>
+				<button className="w3-button w3-pink" onClick={() => (window.location = "/register")}> Register</button>
 			</div>
 
 			<div className="w3-container w3-blue" style={{ padding: "2rem", marginTop: "2rem"}}>

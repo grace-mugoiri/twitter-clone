@@ -16,7 +16,7 @@ function App() {
 		<React.Fragment>
 			<Navbar />
 			<Router>
-				<Route path="/" exact component={login ? <MainPage/> : <Home/>} />
+				<Route path="/" exact> {login ? <MainPage/> : <Home/>} </Route>
 				<Route path="/login" exact component={Login} />
 				<Route path="/register" exact component={Register} />
 				<Route path="/logout" exact component={Logout} />
