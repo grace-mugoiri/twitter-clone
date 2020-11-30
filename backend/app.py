@@ -2,17 +2,20 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import re
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity, jwt_refresh_token_required, create_refresh_token, get_raw_jwt
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///twitter.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+db = SQLAlchemy(app)
 app.config["JWT_SECRET_KEY"] = "thisismyjwtsecrettoken"
+app.config["JWT_BLACKLIST_ENABLED"] = True
+app.config["JWT_BLACKLIST_TOKEN_CHECKS"] = ["access", "refresh"]
+jwt = JWTManager(app)
 CORS(app)
-JWTManager(app)
+
 
 # DB
-db = SQLAlchemy(app)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -92,20 +95,39 @@ def delTweet(tid):
         print(e)
         return False
 
+class InvalidToken(db.Model):
+    __tablename__ = "invalid_tokens"
+    id = db.Column(db.Integer, primary_key=True)
+    jti = db.Column(db.String)
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def is_invalid(cls, jti):
+        q = cls.query.filter_by(jti=jti).first()
+        return bool(q)
 
 # ROUTES
+
+@jwt.token_in_blacklist_loader
+def check_if_blacklisted_token(decrypted):
+    jti = decrypted["jti"]
+    return InvalidToken.is_invalid(jti)
 
 @app.route("/api/login", methods=["POST"])
 def login():
     try:
         email = request.json["email"]
         password = request.json["pwd"]
-        if (email and password):
+        if email and password:
             user = list(
                 filter(lambda x: x["email"] == email and x["password"] == password, getUsers()))
             if len(user) == 1:
                 token = create_access_token(identity=user[0]["id"])
-                return jsonify({"token": token})
+                refresh_token = create_refresh_token(identity=user[0]["id"])
+                return jsonify({"token": token, "refreshToken": refresh_token})
             else:
                 return jsonify({"error": "wrong credentials"})
         else:
@@ -132,8 +154,33 @@ def register():
         addUser(username, email, password)
         return jsonify({"success": True})
     except Exception as e:
-		print(e)
+        print(e)
         return jsonify({"error": "some thing is wrong at the end"})
+
+@app.route("/api/checkiftokenexpire", methods=["POST"])
+@jwt_required
+def check_if_token_expire():
+    print(get_jwt_identity())
+    return jsonify({"success": True})
+
+@app.route("/ai/refreshtoken", methods=["POST"])
+@jwt_refresh_token_required
+def refresh():
+    identity = get_jwt_identity()
+    token = create_access_token(identity=identity)
+    return jsonify({"token": token})
+
+@app.route("/api/logout/access", methods=["POST"])
+@jwt_required
+def access_logout():
+    jti = get_raw_jwt()["jti"]
+    try:
+        invalid_token = InvalidToken(jti=jti)
+        invalid_token.save()
+        return jsonify({"success": True})
+    except Exception as e:
+        print(e)
+        return {"error": e}
 
 @app.route("/api/tweets")
 def get_tweets():
