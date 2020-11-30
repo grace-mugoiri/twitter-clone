@@ -1,9 +1,16 @@
 import React, { Component } from "react";
+// import axios from 'axios';
 import Alert from './Alert';
-import { login } from '../login';
+import { login, check } from '../login';
 
 class Login extends Component {
 	state = { err: "" };
+	componentDidMount() {
+		check().then(r => {
+			if (r) {
+			window.location = "/"
+		}})
+	}
     login = (e) => {
         e.preventDefault();
 		login(document.getElementById("email").value,
@@ -47,7 +54,6 @@ class Login extends Component {
                             <button type="submit" class="w3-button w3-blue">
 								Login
                             </button>
-							{this.state.login && "You are logged in"}
                         </p>
                     </form>
                 </div>
