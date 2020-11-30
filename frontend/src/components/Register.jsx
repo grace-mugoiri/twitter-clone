@@ -14,7 +14,12 @@ class Register extends Component {
 				pwd: document.getElementById("password").value,
 			})
 			.then((res) => {
-					console.log(res.data);
+				if (res.data.error) {
+					this.setState({ err: res.data.error });
+				}
+				else {
+					this.setState({ register: true })
+				}
 				});
 	};
 
