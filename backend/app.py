@@ -2,16 +2,20 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import re
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///twitter.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config["JWT_SECRET_KEY"] = "thisismyjwtsecrettoken"
 CORS(app)
+JWTManager(app)
 
 # DB
 db = SQLAlchemy(app)
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key = True) # primary_key makes it so that this value is unique and can be used to identify this record.
+    id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(24))
     email = db.Column(db.String(64))
     pwd = db.Column(db.String(64))
@@ -24,7 +28,7 @@ class User(db.Model):
 
 def getUsers():
     users = User.query.all()
-    return [{"id":i.id, "username":i.username, "email":i.email, "password":i.pwd} for i in users]
+    return [{"id": i.id, "username": i.username, "email": i.email, "password": i.pwd} for i in users]
 
 def getUser(uid):
     users = User.query.all()
@@ -51,13 +55,12 @@ def removeUser(uid):
         print(e)
         return False
 
-
 class Tweet(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     uid = db.Column(db.Integer, db.ForeignKey("user.id"))
     user = db.relationship('User', foreign_keys=uid)
     title = db.Column(db.String(256))
-    content = db.Column(db.String(2050))
+    content = db.Column(db.String(2048))
 
 def getTweets():
     tweets = Tweet.query.all()
@@ -69,18 +72,15 @@ def getUserTweets(uid):
         for item in filter(lambda i: i.user_id == uid, tweets)]
 
 def addTweet(title, content, uid):
-    if (title and content and uid):
-        try:
-            user = list(filter(lambda i: i.id == uid, User.query.all()))[0]
-            twt = Tweet(title=title, content=content, user=user)
-            db.session.add(twt)
-            db.session.commit()
-            return True
-        except Exception as e:
-            print(e)
-            return False
-    else:
-        return False
+	try:
+		user = list(filter(lambda i: i.id == uid, User.query.all()))[0]
+		twt = Tweet(title=title, content=content, user=user)
+		db.session.add(twt)
+		db.session.commit()
+		return True
+	except Exception as e:
+		print(e)
+		return False
 
 def delTweet(tid):
     try:
@@ -92,34 +92,8 @@ def delTweet(tid):
         print(e)
         return False
 
-@app.route("/")
-def react_index():
-    return "Home Page"
 
-@app.route("/api/tweets")
-def get_tweets():
-	return jsonify(getTweets())
-
-@app.route("/api/addtweet", methods=["POST"])
-def add_tweet():
-	try:
-		title = request.json["title"]
-		content = request.json["content"]
-		uid = request.json["uid"]
-		addTweet(title, content, uid)
-		return jsonify({"success": "true"})
-	except Exception as e:
-		print(e)
-		return jsonify({"error": "Invalid form"})
-
-@app.route("/api/deletetweet", methods=["DELETE"])
-def delete_tweet():
-	try:
-		tid = request.json["tid"]
-		delTweet(tid)
-		return jsonify({"success": "true"})
-	except:
-		return jsonify({"error": "Invalid form"})
+# ROUTES
 
 @app.route("/api/login", methods=["POST"])
 def login():
@@ -127,12 +101,19 @@ def login():
         email = request.json["email"]
         password = request.json["pwd"]
         if (email and password):
-            users = getUsers()
-            return jsonify(len(list(filter(lambda x: x["email"] == email and x["password"] == password, users))) == 1)
+            user = list(
+                filter(lambda x: x["email"] == email and x["password"] == password, getUsers()))
+            if len(user) == 1:
+                token = create_access_token(identity=user[0]["id"])
+                return jsonify({"token": token})
+            else:
+                return jsonify({"error": "wrong credentials"})
         else:
-            return jsonify({"error": "Invalid form"})
-    except:
-        return jsonify({"error": "Invalid form"})
+            return jsonify({"error": "Invalid pass/email"})
+    except Exception as e:
+        print(e)
+        return jsonify({"error": "Invalid form in gen"})
+
 
 @app.route("/api/register", methods=["POST"])
 def register():
@@ -145,14 +126,41 @@ def register():
         users = getUsers()
 
         if (len(list(filter(lambda x: x["email"] == email, users))) == 1):
-            return jsonify({"error": "Invalid form"})
+            return jsonify({"error": "email is wrong"})
         if not re.match(r"[\w\._]{5,}@\w{3,}.\w{2,4}", email):
-            return jsonify({"error": "Invalid form"})
+            return jsonify({"error": "email character"})
         addUser(username, email, password)
         return jsonify({"success": True})
-    except:
-        return jsonify({"error": "Invalid form"})
+    except Exception as e:
+		print(e)
+        return jsonify({"error": "some thing is wrong at the end"})
 
+@app.route("/api/tweets")
+def get_tweets():
+	return jsonify(getTweets())
+
+@app.route("/api/addtweet", methods=["POST"])
+@jwt_required
+def add_tweet():
+	try:
+		title = request.json["title"]
+		content = request.json["content"]
+		uid = request.json["uid"]
+		addTweet(title, content, uid)
+		return jsonify({"success": "true"})
+	except Exception as e:
+		print(e)
+		return jsonify({"error": "Could not add your tweet"})
+
+@app.route("/api/deletetweet", methods=["DELETE"])
+@jwt_required
+def delete_tweet():
+	try:
+		tid = request.json["tid"]
+		delTweet(tid)
+		return jsonify({"success": "true"})
+	except:
+		return jsonify({"error": "Could not delete tweet"})
 
 if __name__ == "__main__":
     app.run(debug=True)
