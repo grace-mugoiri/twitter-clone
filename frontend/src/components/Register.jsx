@@ -18,7 +18,7 @@ class Register extends Component {
 					this.setState({ err: res.data.error });
 				}
 				else {
-					this.setState({ register: true })
+					window.location = "/login"
 				}
 				});
 	};

@@ -10,7 +10,7 @@ class Login extends Component {
 		login(document.getElementById("email").value,
 			document.getElementById("password").value).then(r => {
 				if (r === true) {
-					this.setState({ login: true })
+					window.location = "/"
 				} else {
 					this.setState({ err: r })
 				}
