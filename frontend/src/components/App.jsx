@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from "./Home";
+// import Home from "./Home";
 import Navbar from "./Navbar";
 import Login from "./Login";
 import Register from "./Register";
@@ -16,7 +16,8 @@ function App() {
 		<React.Fragment>
 			<Navbar />
 			<Router>
-				<Route path="/" exact> {login ? <MainPage/> : <Home/>} </Route>
+				{/* <Route path="/" exact> {login ? <MainPage/> : <Home/>} </Route> */}
+				<Route path="/" exact component={MainPage} />
 				<Route path="/login" exact component={Login} />
 				<Route path="/register" exact component={Register} />
 				<Route path="/logout" exact component={Logout} />
