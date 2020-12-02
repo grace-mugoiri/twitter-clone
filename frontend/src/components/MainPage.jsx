@@ -4,11 +4,20 @@ import Axios from "axios";
 import AddTweet from './AddTweet';
 
 class MainPage extends React.Component {
-	state = { tweets: [] }
+	state = {tweets: [], currentUser: {username: ""}}
 	componentDidMount() {
 		Axios.get("/api/tweets").then(res => {
-			this.setState({ tweets: res.data.reverse() })
+			this.setState({ tweets: res.data.reverse()})
 		});
+		setTimeout(() => {
+			Axios.get("/api/getcurrentuser", {
+				headers: {
+					Authorization: `Bearer ${localStorage.getItem("token")}`
+				}
+			}).then(res => {
+				this.setState({currentUser: res.data})
+			})
+		}, 500)
 	}
 	render() {
 		return (
@@ -26,7 +35,13 @@ class MainPage extends React.Component {
 				<div className="w3-container">
 					{this.state.tweets.length === 0 ? <p className="w3-xlarge w3-opacity" style={{ marginLeft: "2rem" }}>No tweets! Create one </p> : this.state.tweets.map((item, index) => {
 						return (
-							<TweetItem title={item.title} content={item.content} key={index} />
+							<TweetItem
+								id={item.id}
+								title={item.title}
+								content={item.content}
+								author={item.user.username}
+								isOwner={this.state.currentUser.username === item.user.username}
+								key={index} />
 						);
 					})}
 				</div>

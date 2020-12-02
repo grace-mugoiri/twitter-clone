@@ -34,7 +34,7 @@ class Register extends Component {
 					<form onSubmit={this.register}>
 						<p>
 							<label htmlFor="email">Email</label>
-							<input type="email" className="w3-input w3-border" id="email"/>
+							<input type="email" placeholder="email.com" className="w3-input w3-border" id="email"/>
 						</p>
 						<p>
 							<label htmlFor="username">Username</label>
@@ -42,7 +42,7 @@ class Register extends Component {
 						</p>
 						<p>
 							<label htmlFor="password">Password</label>
-							<input type="password" className="w3-input w3-border" id="password"/>
+							<input type="password" placeholder="****" className="w3-input w3-border" id="password"/>
 						</p>
 						<p>
 							<button className="w3-button w3-blue" type="submit">Register</button>
