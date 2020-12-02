@@ -35,18 +35,19 @@ def getUsers():
 
 def getUser(uid):
     users = User.query.all()
-    user = list(filter(lambda x:x.id == uid, users))[0]
+    user = list(filter(lambda x: x.id == uid, users))[0]
     return {"id": user.id, "username": user.username, "email": user.email, "password": user.pwd}
 
 def addUser(username, email, pwd):
     try:
-        user = User(username, pwd, email)
+        user = User(username, email, pwd)
         db.session.add(user)
         db.session.commit()
         return True
     except Exception as e:
         print(e)
         return False
+
 
 def removeUser(uid):
     try:
@@ -71,7 +72,7 @@ def getTweets():
 
 def getUserTweets(uid):
     tweets = Tweet.query.all()
-    return [{"id":item.id, "userid":item.user_id, "title":item.title, "content":item.content}
+    return [{"id": item.id, "userid": item.user_id, "title": item.title, "content": item.content}
         for item in filter(lambda i: i.user_id == uid, tweets)]
 
 def addTweet(title, content, uid):
@@ -122,8 +123,7 @@ def login():
         email = request.json["email"]
         password = request.json["pwd"]
         if email and password:
-            user = list(
-                filter(lambda x: x["email"] == email and x["password"] == password, getUsers()))
+            user = list(filter(lambda x: x["email"] == email and x["password"] == password, getUsers()))
             if len(user) == 1:
                 token = create_access_token(identity=user[0]["id"])
                 refresh_token = create_refresh_token(identity=user[0]["id"])
@@ -163,7 +163,7 @@ def check_if_token_expire():
     print(get_jwt_identity())
     return jsonify({"success": True})
 
-@app.route("/ai/refreshtoken", methods=["POST"])
+@app.route("/api/refreshtoken", methods=["POST"])
 @jwt_refresh_token_required
 def refresh():
     identity = get_jwt_identity()
@@ -173,6 +173,19 @@ def refresh():
 @app.route("/api/logout/access", methods=["POST"])
 @jwt_required
 def access_logout():
+    jti = get_raw_jwt()["jti"]
+    try:
+        invalid_token = InvalidToken(jti=jti)
+        invalid_token.save()
+        return jsonify({"success": True})
+    except Exception as e:
+        print(e)
+        return {"error": e}
+
+
+@app.route("/api/logout/refresh", methods=["POST"])
+@jwt_required
+def refresh_logout():
     jti = get_raw_jwt()["jti"]
     try:
         invalid_token = InvalidToken(jti=jti)
@@ -192,7 +205,7 @@ def add_tweet():
 	try:
 		title = request.json["title"]
 		content = request.json["content"]
-		uid = request.json["uid"]
+		uid = get_jwt_identity()
 		addTweet(title, content, uid)
 		return jsonify({"success": "true"})
 	except Exception as e:
@@ -208,6 +221,12 @@ def delete_tweet():
 		return jsonify({"success": "true"})
 	except:
 		return jsonify({"error": "Could not delete tweet"})
+
+@app.route("/api/getcurrentuser")
+@jwt_required
+def get_current_user():
+	uid = get_jwt_identity()
+	return jsonify(getUser(uid))
 
 if __name__ == "__main__":
     app.run(debug=True)
