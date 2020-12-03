@@ -117,13 +117,14 @@ def check_if_blacklisted_token(decrypted):
     jti = decrypted["jti"]
     return InvalidToken.is_invalid(jti)
 
-@app.route("/api/login", methods=["POST"])
+@app.route("/api/login", methods=["GET", "POST"])
 def login():
     try:
         email = request.json["email"]
         password = request.json["pwd"]
         if email and password:
             user = list(filter(lambda x: x["email"] == email and x["password"] == password, getUsers()))
+            print("reached here")
             if len(user) == 1:
                 token = create_access_token(identity=user[0]["id"])
                 refresh_token = create_refresh_token(identity=user[0]["id"])
@@ -137,7 +138,7 @@ def login():
         return jsonify({"error": "Invalid form in gen"})
 
 
-@app.route("/api/register", methods=["POST"])
+@app.route("/api/register", methods=["GET", "POST"])
 def register():
     try:
         email = request.json["email"]
@@ -227,6 +228,39 @@ def delete_tweet():
 def get_current_user():
 	uid = get_jwt_identity()
 	return jsonify(getUser(uid))
+
+@app.route("/api/changepassword", methods=["POST"])
+@jwt_required
+def change_password():
+	try:
+		user = User.query.get(get_jwt_identity())
+		if not (request.json["password"] and request.json["npassword"]):
+			return jsonify({"error": "Invalid form"})
+		if not user.pwd == request.json["password"]:
+			return jsonify({"error": "Wrong password"})
+		user.pwd = request.json["npassword"]
+		db.session.add(user)
+		db.session.commit()
+		return jsonify({"success": True})
+	except Exception as e:
+		print(e)
+		return jsonify({"error": "Invalid form"})
+
+@app.route("/api/deleteaccount", methods=["DELETE"])
+@jwt_required
+def delete_account():
+	try:
+		user = User.query.get(get_jwt_identity())
+		tweets = Tweet.query.all()
+		for tweet in tweets:
+			if tweet.user.username == user.username:
+				delTweet(tweet.id)
+		removeUser(user.id)
+		return jsonify({"success": True})
+	except Exception as e:
+		print(e)
+		return jsonify({"error": str(e)})
+
 
 if __name__ == "__main__":
     app.run(debug=True)
