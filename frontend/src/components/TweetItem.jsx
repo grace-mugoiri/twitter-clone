@@ -1,4 +1,7 @@
 import { React } from 'react';
+import { Axios } from 'axios';
+
+
 function deleteTweet(tid) {
 	Axios.delete("/api/deletetweet/" + tid, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
 		console.log(res.data);
