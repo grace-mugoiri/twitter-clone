@@ -8,6 +8,8 @@ import MainPage from './MainPage';
 import { check } from '../login';
 import Logout from './Logout';
 import UserSettings from './UserSettings';
+import NotFound from './NotFound';
+
 
 function App() {
 	let [login, setLogin] = React.useState(false);
@@ -23,6 +25,7 @@ function App() {
 				<Route path="/register" exact component={Register} />
 				<Route path="/logout" exact component={Logout} />
 				<Route path="/settings" exact component={UserSettings} />
+				<Route component={NotFound} />
 			</Router>
 		</React.Fragment>
 	)
