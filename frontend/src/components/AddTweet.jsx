@@ -1,6 +1,6 @@
 import React from "react";
 import {Editor} from "@tinymce/tinymce-react/lib/cjs/main/ts";
-import Axios from "axios";
+import axios from "axios";
 
 class AddTweet extends React.Component {
     state = {content: ""}
@@ -12,7 +12,7 @@ class AddTweet extends React.Component {
 
     submitForm = (e) => {
         e.preventDefault()
-        Axios.post("/api/addtweet", {
+        axios.post("/api/addtweet", {
             title: document.getElementById("title").value,
             content: this.state.content
         }, {

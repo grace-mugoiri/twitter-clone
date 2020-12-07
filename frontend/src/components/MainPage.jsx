@@ -1,16 +1,16 @@
 import React from 'react';
 import TweetItem from './TweetItem';
-import Axios from "axios";
+import axios from "axios";
 import AddTweet from './AddTweet';
 
 class MainPage extends React.Component {
 	state = {tweets: [], currentUser: {username: ""}}
 	componentDidMount() {
-		Axios.get("/api/tweets").then(res => {
+		axios.get("/api/tweets").then(res => {
 			this.setState({ tweets: res.data.reverse()})
 		});
 		setTimeout(() => {
-			Axios.get("/api/getcurrentuser", {
+			axios.get("/api/getcurrentuser", {
 				headers: {
 					Authorization: `Bearer ${localStorage.getItem("token")}`
 				}

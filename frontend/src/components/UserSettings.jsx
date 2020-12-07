@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import axios from 'axios';
 import React from 'react';
 import Alert from './Alert';
 
@@ -11,7 +11,7 @@ class UserSettings extends React.Component {
 	}
 	changePassword = (e) => {
 		e.preventDefault();
-		Axios.post("api/changepassword", {
+		axios.post("api/changepassword", {
 			password: document.getElementById("password").value,
 			npassword: document.getElementById("npassword").value
 		}, {
@@ -34,7 +34,7 @@ class UserSettings extends React.Component {
 		e.preventDefault();
 		let x = window.confirm("Are you sure you want to delete your account? THIS CANNOT BE UNDONE. ALL OF YOUR POST WILL BE DEETED")
 		if (x) {
-			Axios.delete("/api/deleteaccount", {
+			axios.delete("/api/deleteaccount", {
 				headers: {
 					Authorization: "Bearer " + localStorage.getItem("token")
 				}

@@ -1,8 +1,8 @@
 
-import Axios from "axios";
+import axios from "axios";
 
 async function login(email, pwd) {
-    const res = await Axios.post("/api/login", {email, pwd});
+    const res = await axios.post("/api/login", {email, pwd});
     const {data} = await res;
     if (data.error) {
         return data.error
@@ -16,7 +16,7 @@ async function login(email, pwd) {
 async function check() {
     const token = localStorage.getItem("token")
     try {
-        const res = await Axios.post("/api/checkiftokenexpire", {}, {
+        const res = await axios.post("/api/checkiftokenexpire", {}, {
             headers: {
                 Authorization: "Bearer " + token
             }
@@ -24,13 +24,12 @@ async function check() {
         const {data} = await res;
         return data.success
     } catch {
-        console.log("p")
         const refresh_token = localStorage.getItem("refreshToken")
         if (!refresh_token) {
             localStorage.removeItem("token")
             return false;
         }
-        Axios.post("/api/refreshtoken", {}, {
+        axios.post("/api/refreshtoken", {}, {
             headers: {
                 Authorization: `Bearer ${refresh_token}`
             }
@@ -44,7 +43,7 @@ async function check() {
 function logout() {
     if (localStorage.getItem("token")) {
         const token = localStorage.getItem("token")
-        Axios.post("/api/logout/access", {}, {
+        axios.post("/api/logout/access", {}, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -58,7 +57,7 @@ function logout() {
     }
     if (localStorage.getItem("refreshToken")) {
         const refreshToken = localStorage.getItem("refreshToken")
-        Axios.post("/api/logout/refresh", {}, {
+        axios.post("/api/logout/refresh", {}, {
             headers: {
                 Authorization: `Bearer ${refreshToken}`
             }
