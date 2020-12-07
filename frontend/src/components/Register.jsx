@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { check } from '../login'
 import axios from 'axios';
 import Alert from './Alert';
-import { check } from '../login'
 
 class Register extends Component {
 	state = { err: "" };
