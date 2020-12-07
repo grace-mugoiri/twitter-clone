@@ -1,8 +1,11 @@
+import dotenv
+dotenv.load_dotenv()
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import re
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity, jwt_refresh_token_required, create_refresh_token, get_raw_jwt
+import security
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///twitter.db"
@@ -123,7 +126,7 @@ def login():
         email = request.json["email"]
         password = request.json["pwd"]
         if email and password:
-            user = list(filter(lambda x: x["email"] == email and x["password"] == password, getUsers()))
+            user = list(filter(lambda x: security.dec(x["email"]) == email and security.checkpwd(password, x["password"]) , getUsers()))
             print("reached here")
             if len(user) == 1:
                 token = create_access_token(identity=user[0]["id"])
@@ -143,16 +146,18 @@ def register():
     try:
         email = request.json["email"]
         email = email.lower()
-        password = request.json["pwd"]
+        password = security.encpwd(request.json["pwd"])
         username = request.json["username"]
+        if not (email and password and username):
+            return jsonify({"error": "Invalid form"})
 
         users = getUsers()
 
-        if (len(list(filter(lambda x: x["email"] == email, users))) == 1):
+        if (len(list(filter(lambda x: security.dec(x["email"] == email), users))) == 1):
             return jsonify({"error": "email is wrong"})
         if not re.match(r"[\w\._]{5,}@\w{3,}.\w{2,4}", email):
             return jsonify({"error": "email character"})
-        addUser(username, email, password)
+        addUser(username, security.enc(email), password)
         return jsonify({"success": True})
     except Exception as e:
         print(e)
@@ -161,7 +166,7 @@ def register():
 @app.route("/api/checkiftokenexpire", methods=["POST"])
 @jwt_required
 def check_if_token_expire():
-    print(get_jwt_identity())
+    # print(get_jwt_identity())
     return jsonify({"success": True})
 
 @app.route("/api/refreshtoken", methods=["POST"])
