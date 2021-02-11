@@ -47,11 +47,11 @@ function Home() {
 						<a href="/api/tweets" target="_blank" rel="noopener noreferrer">
 							<FontAwesomeIcon icon={faEllipsisH} />
 						</a>
-					<div>
+					{/* <div>
 						<button className="add-tweet-plus">
 							<FontAwesomeIcon icon={faPlus} />
 						</button>
-					</div>
+					</div> */}
 
 					</div>
 					</div>
@@ -238,20 +238,72 @@ function Home() {
               <a href="/api" id="trends">Kenya Trends</a>
 						<hr />
 						<div className="trending-news">
-              <div id="trending-news"><span> 1 </span></div>
-              <div className="dot"><span> . </span></div>
-              <div className="trending-name"><span> Trending </span></div>
-              <span id="hash">#Google Devs</span>
-              <div><span id="">3665 tweets</span></div>
+              {/* <div id="trending-news"><span> 1 </span></div> */}
+              <div id="trending-news" className="dot trending-name" ><span> 1 . Trending </span></div>
+              {/* <div ><span> . </span></div> */}
+              {/* <div className="trending-name"><span> Trending </span></div> */}
+              <span id="hash">#GoogleDevs</span>
+              <div className="trending-name"><span id="">3665 tweets</span></div>
+							<hr />
+              <div id="trending-news" className="dot trending-name" ><span> 2 . Web development . Trending </span></div>
+              {/* <div ><span> . </span></div> */}
+              {/* <div className="trending-name"><span> Trending </span></div> */}
+              <span id="hash">#FlasknewVersion</span>
+              <div className="trending-name"><span id="">3665 tweets</span></div>
+							<hr />
+              <div id="trending-news" className="dot trending-name" ><span> 3 . Trending </span></div>
+              {/* <div ><span> . </span></div> */}
+              {/* <div className="trending-name"><span> Trending </span></div> */}
+              <span id="hash">#Bitcoin</span>
+              <div className="trending-name"><span id="">3665 tweets</span></div>
+							<hr />
+              <div id="trending-news" className="dot trending-name" ><span> 4 . Artificial Intelligence . Trending </span></div>
+              {/* <div ><span> . </span></div> */}
+              {/* <div className="trending-name"><span> Trending </span></div> */}
+              <span id="hash">#Robotics</span>
+              <div className="trending-name"><span id="">3665 tweets</span></div>
+							<hr />
+              <div id="trending-news" className="dot trending-name" ><span> 5 . Trending </span></div>
+              {/* <div ><span> . </span></div> */}
+              {/* <div className="trending-name"><span> Trending </span></div> */}
+              <span id="hash">#Futuristicmoney</span>
+              <div className="trending-name"><span id="">3665 tweets</span></div>
 							<hr />
 							</div>
             </div>
             <div className="row-mid">
-              Who to follow
-              <img src="#" alt="" />
-              <span>AliPay</span>
-              <span>@alipay</span>
-              <button>Follow</button>
+						<h2 className="follow">Who to follow</h2>
+						<hr/>
+							<div className="follow-links">
+								<div id="follow-link"><img src="#" alt="" />image</div>
+								<div className="name"><span>AliPay</span></div>
+								<div className="handle"><span>@alipay</span></div>
+								<div className="follow-handle"><button>Follow</button></div>
+							</div>
+							<div className="follow-links">
+								<div id="follow-link"><img src="#" alt="" />image</div>
+								<div className="name"><span>AliPay</span></div>
+								<div className="handle"><span>@alipay</span></div>
+								<div className="follow-handle"><button>Follow</button></div>
+							</div>
+							<div className="follow-links">
+								<div id="follow-link"><img src="#" alt="" />image</div>
+								<div className="name"><span>AliPay</span></div>
+								<div className="handle"><span>@alipay</span></div>
+								<div className="follow-handle"><button>Follow</button></div>
+							</div>
+							<div className="follow-links">
+								<div id="follow-link"><img src="#" alt="" />image</div>
+								<div className="name"><span>AliPay</span></div>
+								<div className="handle"><span>@alipay</span></div>
+								<div className="follow-handle"><button>Follow</button></div>
+							</div>
+							<div className="follow-links">
+								<div id="follow-link"><img src="#" alt="" />image</div>
+								<div className="name"><span>AliPay</span></div>
+								<div className="handle"><span>@alipay</span></div>
+								<div className="follow-handle"><button>Follow</button></div>
+							</div>
             </div>
 
         </div>

@@ -38,14 +38,48 @@ hr {
 	border-width: 1px;
 
 }
+.row {
+	margin-right: 0px;
+
+
+}
 
 .column-one {
 	float: left;
 	width: 10.33%;
+border-radius: 16px;
+/* overflow: hidden; */
+border-width: 1px;
+/* border-style: solid; */
+/* border-bottom-style: solid; */
+/* -moz-box-pack: justify; */
+	justify-content: space-between;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	height: 100%;
+	min-width: 30px;
+
+
 }
 .column-two {
 	float: left;
 	width: 56.33%;
+	margin-bottom: 15px;
+	border-radius: 16px;
+	overflow: hidden;
+	border-width: 1px;
+	border-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	-moz-box-pack: justify;
+	justify-content: space-between;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+
 }
 .column-three {
 	float: left;
@@ -321,6 +355,7 @@ flex-direction: row;
 	white-space: inherit;
 
 
+
 }
 
 .trending-name {
@@ -332,6 +367,7 @@ flex-direction: row;
   Arial, sans-serif;
 	overflow-wrap: break-word;
 	min-width: 0px;
+
 
 }
 #hash {
@@ -370,5 +406,158 @@ flex-direction: row;
 
 }
 
+.row-mid {
+	min-width: 15rem;
+	margin-bottom: 15px;
+	border-color: grey;
+	border-radius: 16px;
+	overflow: hidden;
+	border-width: 1px;
+	border-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: grey;
+	-moz-box-pack: justify;
+	justify-content: space-between;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
 
+}
+.follow {
+	-moz-box-direction: normal;
+	-moz-box-orient: horizontal;
+	flex-direction: row;
+	-webkit-line-clamp: 3;
+	font-weight: 800;
+	font-size: 19px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+  Arial, sans-serif;
+	line-height: 1.3125;
+	overflow-wrap: break-word;
+	min-width: 0px;
+	color: rgb(217, 217, 217);
+	-moz-box-orient: vertical;
+	display: -webkit-box;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	overflow-wrap: break-word;
 
+}
+
+.follow-links {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	outline-style: none;
+	transition-property: background-color, box-shadow;
+	transition-duration: 0.2s;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	-moz-box-direction: normal;
+	-moz-box-orient: horizontal;
+	flex-direction: row;
+
+}
+#follow-links {
+	flex-basis: 49px;
+	margin-right: 10px;
+	-moz-box-flex: 0;
+	flex-grow: 0;
+	-moz-box-pack: center;
+	justify-content: center;
+	flex-shrink: 1;
+	max-width: 100%;
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	background-image: url('https://pbs.twimg.com/profile_images/1247427821703577600/wHU2ygZS_reasonably_small.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	z-index: -1;
+	background-color: rgba(0, 0, 0, 0);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0%;
+	bottom: 0%;
+	right: 0%;
+	left: 0%;
+	box-shadow: rgba(0, 0, 0, 0.02) 0px 0px 2px inset;
+	outline-style: none;
+	transition-property: background-color, box-shadow;
+	transition-duration: 0.2s;
+	border-width: 1px;
+	border-radius: 9999px;
+}
+
+.name {
+	-moz-box-pack: center;
+	justify-content: center;
+	flex-basis: 0px;
+	-moz-box-flex: 1;
+	flex-grow: 1;
+	overflow-wrap: break-word;
+	white-space: nowrap;
+	font-weight: 700;
+	font-size: 15px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+  Arial, sans-serif;
+	line-height: 1.3125;
+	overflow-wrap: break-word;
+	min-width: 0px;
+	color: rgb(217, 217, 217);
+
+}
+.handle {
+	flex-shrink: 1;
+	-moz-box-direction: normal;
+	-moz-box-orient: horizontal;
+	flex-direction: row;
+	font-weight: 400;
+	color: rgb(110, 118, 125);
+	font-size: 15px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+  Arial, sans-serif;
+	line-height: 1.3125;
+	overflow-wrap: break-word;
+	min-width: 0px;
+	-moz-box-direction: normal;
+	-moz-box-orient: horizontal;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow-wrap: break-word;
+	font-size: 11px;
+	position: absolute;
+	border-width: 1px;
+}
+.follow-handle button {
+	margin-left: 140px;
+	min-width: 0px;
+	min-width: calc(48.3px);
+	min-height: 30px;
+	outline-style: none;
+	transition-property: background-color, box-shadow;
+	transition-duration: 0.2s;
+	background-color: rgba(0, 0, 0, 0);
+	height: 0px;
+	user-select: none;
+	padding-left: 1em;
+	padding-right: 1em;
+	border-color: #1da1f2;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 9999px;
+	color: #1da1f2;
+	font-weight: 400px;
+	font-size: 15px;
+}
