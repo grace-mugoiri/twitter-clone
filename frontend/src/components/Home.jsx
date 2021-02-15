@@ -365,48 +365,56 @@ function Home() {
           <div className="row-mid">
             <h2 className="follow">Who to follow</h2>
             <hr />
-            <div className="follow-links">
-              <div id="follow-link">
-                <img src="#" alt="" />
-                image
+            <div className="image">
+              <div className="image image-profile">
+								<img src={grace} alt="" />
               </div>
-              <div className="name"><span>AliPay</span></div>
+              <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
               <div className="handle"><span>@alipay</span></div>
               <div className="follow-handle"><button>Follow</button></div>
             </div>
-            <div className="follow-links">
-              <div id="follow-link">
-                <img src="#" alt="" />
-                image
+						<hr/>
+            <div className="image">
+              <div className="image image-profile">
+								<img src={grace} alt="" />
               </div>
-              <div className="name"><span>AliPay</span></div>
+              <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
               <div className="handle"><span>@alipay</span></div>
               <div className="follow-handle"><button>Follow</button></div>
             </div>
-            <div className="follow-links">
-              <div id="follow-link">
-                <img src="#" alt="" />
-                image
+						<hr/>
+            <div className="image">
+              <div className="image image-profile">
+								<img src={grace} alt="" />
               </div>
-              <div className="name"><span>AliPay</span></div>
+              <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
               <div className="handle"><span>@alipay</span></div>
               <div className="follow-handle"><button>Follow</button></div>
             </div>
-            <div className="follow-links">
-              <div id="follow-link">
-                <img src="#" alt="" />
-                image
+						<hr/>
+            <div className="image">
+              <div className="image image-profile">
+								<img src={grace} alt="" />
               </div>
-              <div className="name"><span>AliPay</span></div>
+              <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
               <div className="handle"><span>@alipay</span></div>
               <div className="follow-handle"><button>Follow</button></div>
             </div>
-            <div className="follow-links">
-              <div id="follow-link">
-                <img src="#" alt="" />
-                image
+						<hr/>
+            <div className="image">
+              <div className="image image-profile">
+								<img src={grace} alt="" />
               </div>
-              <div className="name"><span>AliPay</span></div>
+              <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
+              <div className="handle"><span>@alipay</span></div>
+              <div className="follow-handle"><button>Follow</button></div>
+						</div>
+						<hr/>
+            <div className="image">
+              <div className="image image-profile">
+								<img src={grace} alt="" />
+              </div>
+              <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
               <div className="handle"><span>@alipay</span></div>
               <div className="follow-handle"><button>Follow</button></div>
             </div>

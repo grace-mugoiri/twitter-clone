@@ -24,7 +24,6 @@
 	color: rgb(217, 217, 217);
 	float: left;
 	margin-top: 30px;
-	/* margin-left: -300px; */
 }
 
 
@@ -640,7 +639,7 @@ flex-direction: row;
 
 }
 
-.follow-links {
+/* .follow-links {
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	outline-style: none;
@@ -654,8 +653,8 @@ flex-direction: row;
 	-moz-box-orient: horizontal;
 	flex-direction: row;
 
-}
-#follow-links {
+} */
+/* #follow-links {
 	flex-basis: 49px;
 	margin-right: 10px;
 	-moz-box-flex: 0;
@@ -688,25 +687,41 @@ flex-direction: row;
 	transition-property: background-color, box-shadow;
 	transition-duration: 0.2s;
 	border-width: 1px;
-	border-radius: 9999px;
-}
 
-.name {
-	-moz-box-pack: center;
-	justify-content: center;
-	flex-basis: 0px;
-	-moz-box-flex: 1;
-	flex-grow: 1;
-	overflow-wrap: break-word;
-	white-space: nowrap;
-	font-weight: 700;
-	font-size: 15px;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+}
+#follow-links img {
+	cursor: pointer;
+	border-radius: 9999px;
+	height: 49px;
+	flex-basis: 49px;
+	padding-top: 5px;
+	margin-right: 10px;
+	-moz-box-flex: 0;
+	flex-grow: 0;
+
+} */
+
+.name a{
+	outline-style: none;
+cursor: pointer;
+flex-shrink: 1;
+max-width: 100%;
+white-space: nowrap;
+font-weight: 700;
+font-size: 13px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
   Arial, sans-serif;
-	line-height: 1.3125;
-	overflow-wrap: break-word;
-	min-width: 0px;
-	color: rgb(217, 217, 217);
+line-height: 1.3125;
+overflow-wrap: break-word;
+min-width: 0px;
+color: rgb(217, 217, 217);
+/* margin-left: 5px; */
+margin-left: 50px;
+/* margin-top: 25px; */
+text-decoration: none;
+margin-bottom: 0px;
+	text-decoration: none;
+
 
 }
 .handle {
@@ -718,7 +733,7 @@ flex-direction: row;
 	color: rgb(110, 118, 125);
 	font-size: 15px;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-  Arial, sans-serif;
+	Arial, sans-serif;
 	line-height: 1.3125;
 	overflow-wrap: break-word;
 	min-width: 0px;
@@ -729,9 +744,11 @@ flex-direction: row;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow-wrap: break-word;
-	font-size: 11px;
+	font-size: 12px;
 	position: absolute;
 	border-width: 1px;
+	margin-left: 50px;
+	margin-top: 20px;
 }
 .follow-handle button {
 	margin-left: 140px;
