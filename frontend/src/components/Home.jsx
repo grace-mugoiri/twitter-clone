@@ -129,17 +129,48 @@ function Home() {
 							<div className="css-3 happening">
 								<a href="/api" id="happening-link">Computer Programming</a>
 							</div>
+
+								<div className="doe">
+                    <a href="/api">John Doe @JohnDoe 16h</a>
+							</div>
+						</div>
+						<div className="text">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              </div>
+							<span className="likes">
+                    <a href="/api">
+                      <FontAwesomeIcon icon={faComment} />
+                      12
+                    </a>
+                    <a href="/api">
+                      <FontAwesomeIcon icon={faRetweet} />
+                      27
+                    </a>
+                    <a href="/api">
+                      <FontAwesomeIcon icon={faHeart} />
+                      212
+                    </a>
+                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
+                  </span>
+          </div>
+          <hr />
+					<div className="image">
+						<div className="image image-profile">
+							<a href="/profile"><img src={ grace } alt="" id="photo" /></a>
+							</div>
+						<div className="css-3">
+							<div className="css-3 happening">
+								<a href="/api" id="happening-link">Computer Programming</a>
 							</div>
 
-                  <span>
-                    <a href="/api">John Doe </a>
-                    <a href="/api">@JohnDoe </a>
-                    <span>16h</span>
-                  </span>
-
-                  <p>Lorem ipsum dolor sit amet</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, qui nesciunt nihil expedita laudantium enim ipsa numquam illum nam? Accusantium quas aliquid laudantium maxime consequuntur fugiat iusto vitae deleniti officiis?</p>
-                  <span className="likes">
+								<div className="doe">
+                    <a href="/api">John Doe @JohnDoe 16h</a>
+							</div>
+						</div>
+						<div className="text">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              </div>
+							<span className="likes">
                     <a href="/api">
                       <FontAwesomeIcon icon={faComment} />
                       12
@@ -154,27 +185,25 @@ function Home() {
                     </a>
                     <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
                   </span>
-
-
-
           </div>
           <hr />
-          <div className="article">
-            <div>
-              <a href="/api" className="category">Computer Programming</a>
-              <a href="/api" className="content">
-                <div className="photo">
-                  <img src="#" alt="" id="photo" />
-                  photo
-                  <span>
-                    <a href="/api">Mary Stew </a>
-                    <a href="/api">@MaryStew </a>
-                    <span>16h</span>
-                  </span>
+					<div className="image">
+						<div className="image image-profile">
+							<a href="/profile"><img src={ grace } alt="" id="photo" /></a>
+							</div>
+						<div className="css-3">
+							<div className="css-3 happening">
+								<a href="/api" id="happening-link">Computer Programming</a>
+							</div>
 
-                  <p>Lorem ipsum dolor sit amet</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, qui nesciunt nihil expedita laudantium enim ipsa numquam illum nam? Accusantium quas aliquid laudantium maxime consequuntur fugiat iusto vitae deleniti officiis?</p>
-                  <span className="likes">
+								<div className="doe">
+                    <a href="/api">John Doe @JohnDoe 16h</a>
+							</div>
+						</div>
+						<div className="text">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              </div>
+							<span className="likes">
                     <a href="/api">
                       <FontAwesomeIcon icon={faComment} />
                       12
@@ -189,27 +218,25 @@ function Home() {
                     </a>
                     <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
                   </span>
-                </div>
-              </a>
-            </div>
           </div>
           <hr />
-          <div className="article">
-            <div>
-              <a href="/api" className="category">Computer Programming</a>
-              <a href="/api" className="content">
-                <div className="photo">
-                  <img src="#" alt="" id="photo" />
-                  photo
-                  <span>
-                    <a href="/api">Vin Tool </a>
-                    <a href="/api">@VinTool </a>
-                    <span>16h</span>
-                  </span>
+					<div className="image">
+						<div className="image image-profile">
+							<a href="/profile"><img src={ grace } alt="" id="photo" /></a>
+							</div>
+						<div className="css-3">
+							<div className="css-3 happening">
+								<a href="/api" id="happening-link">Computer Programming</a>
+							</div>
 
-                  <p>Lorem ipsum dolor sit amet</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, qui nesciunt nihil expedita laudantium enim ipsa numquam illum nam? Accusantium quas aliquid laudantium maxime consequuntur fugiat iusto vitae deleniti officiis?</p>
-                  <span className="likes">
+								<div className="doe">
+                    <a href="/api">John Doe @JohnDoe 16h</a>
+							</div>
+						</div>
+						<div className="text">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              </div>
+							<span className="likes">
                     <a href="/api">
                       <FontAwesomeIcon icon={faComment} />
                       12
@@ -224,27 +251,25 @@ function Home() {
                     </a>
                     <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
                   </span>
-                </div>
-              </a>
-            </div>
           </div>
           <hr />
-          <div className="article">
-            <div>
-              <a href="/api" className="category">Computer Programming</a>
-              <a href="/api" className="content">
-                <div className="photo">
-                  <img src="#" alt="" id="photo" />
-                  photo
-                  <span>
-                    <a href="/api">Vin Tool </a>
-                    <a href="/api">@VinTool </a>
-                    <span>16h</span>
-                  </span>
+					<div className="image">
+						<div className="image image-profile">
+							<a href="/profile"><img src={ grace } alt="" id="photo" /></a>
+							</div>
+						<div className="css-3">
+							<div className="css-3 happening">
+								<a href="/api" id="happening-link">Computer Programming</a>
+							</div>
 
-                  <p>Lorem ipsum dolor sit amet</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, qui nesciunt nihil expedita laudantium enim ipsa numquam illum nam? Accusantium quas aliquid laudantium maxime consequuntur fugiat iusto vitae deleniti officiis?</p>
-                  <span className="likes">
+								<div className="doe">
+                    <a href="/api">John Doe @JohnDoe 16h</a>
+							</div>
+						</div>
+						<div className="text">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              </div>
+							<span className="likes">
                     <a href="/api">
                       <FontAwesomeIcon icon={faComment} />
                       12
@@ -259,26 +284,25 @@ function Home() {
                     </a>
                     <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
                   </span>
-                </div>
-              </a>
-            </div>
           </div>
-          <div className="article">
-            <div>
-              <a href="/api" className="category">Computer Programming</a>
-              <a href="/api" className="content">
-                <div className="photo">
-                  <img src="#" alt="" id="photo" />
-                  photo
-                  <span>
-                    <a href="/api">Vin Tool </a>
-                    <a href="/api">@VinTool </a>
-                    <span>16h</span>
-                  </span>
+          <hr />
+					<div className="image">
+						<div className="image image-profile">
+							<a href="/profile"><img src={ grace } alt="" id="photo" /></a>
+							</div>
+						<div className="css-3">
+							<div className="css-3 happening">
+								<a href="/api" id="happening-link">Computer Programming</a>
+							</div>
 
-                  <p>Lorem ipsum dolor sit amet</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, qui nesciunt nihil expedita laudantium enim ipsa numquam illum nam? Accusantium quas aliquid laudantium maxime consequuntur fugiat iusto vitae deleniti officiis?</p>
-                  <span className="likes">
+								<div className="doe">
+                    <a href="/api">John Doe @JohnDoe 16h</a>
+							</div>
+						</div>
+						<div className="text">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              </div>
+							<span className="likes">
                     <a href="/api">
                       <FontAwesomeIcon icon={faComment} />
                       12
@@ -293,10 +317,8 @@ function Home() {
                     </a>
                     <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
                   </span>
-                </div>
-              </a>
-            </div>
           </div>
+          <hr />
         </div>
         <div className="column-three">
           <div className="row-search">
