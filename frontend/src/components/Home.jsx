@@ -1,6 +1,9 @@
 import React from 'react';
 import '../assets/styles/topbar.css';
-import grace from '../assets/images/grace.jpg'
+import grace from '../assets/images/grace.jpg';
+import curly from '../assets/images/curly.jpg';
+import me from '../assets/images/me.jpg';
+import pup from '../assets/images/pup.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPhotoVideo, faPollH, faSmileBeam, faCalendarAlt, faRetweet, faShare, faHeart, faComment, faVideo, faHashtag, faPlus, faHome, faBell, faEllipsisH, faBookmark, faEnvelope, faListAlt, faUserCircle,
@@ -68,11 +71,6 @@ function Home() {
           <div className="css-3">
             <div id="topbar">
               Home
-              {/* <div id="profile-tile" />
-              <div id="trending-tile" />
-              <div id="notice-tile" />
-              <div id="follow-tile" />
-              <div id="links-tile" /> */}
 
             </div>
           </div>
@@ -123,7 +121,106 @@ function Home() {
           <hr />
 					<div className="image">
 						<div className="image image-profile">
-							<a href="/profile"><img src={ grace } alt="" id="photo" /></a>
+							<a href="/profile"><img src={ pup } alt="" id="photo" /></a>
+							</div>
+						<div className="css-3">
+							<div className="css-3 happening">
+								<a href="/api" id="happening-link">Computer Programming</a>
+							</div>
+
+								<div className="doe">
+                    <a href="/api">John Doe @JohnDoe 16h</a>
+							</div>
+						</div>
+						<div className="text">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              </div>
+							<span className="likes">
+                    <a href="/api">
+                      <FontAwesomeIcon icon={faComment} />
+                      12
+                    </a>
+                    <a href="/api">
+                      <FontAwesomeIcon icon={faRetweet} />
+                      27
+                    </a>
+                    <a href="/api">
+                      <FontAwesomeIcon icon={faHeart} />
+                      212
+                    </a>
+                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
+                  </span>
+          </div>
+          <hr />
+					<div className="image">
+						<div className="image image-profile">
+							<a href="/profile"><img src={ me } alt="" id="photo" /></a>
+							</div>
+						<div className="css-3">
+							<div className="css-3 happening">
+								<a href="/api" id="happening-link">Computer Programming</a>
+							</div>
+
+								<div className="doe">
+                    <a href="/api">John Doe @JohnDoe 16h</a>
+							</div>
+						</div>
+						<div className="text">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              </div>
+							<span className="likes">
+                    <a href="/api">
+                      <FontAwesomeIcon icon={faComment} />
+                      12
+                    </a>
+                    <a href="/api">
+                      <FontAwesomeIcon icon={faRetweet} />
+                      27
+                    </a>
+                    <a href="/api">
+                      <FontAwesomeIcon icon={faHeart} />
+                      212
+                    </a>
+                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
+                  </span>
+          </div>
+          <hr />
+					<div className="image">
+						<div className="image image-profile">
+							<a href="/profile"><img src={ curly } alt="" id="photo" /></a>
+							</div>
+						<div className="css-3">
+							<div className="css-3 happening">
+								<a href="/api" id="happening-link">Computer Programming</a>
+							</div>
+
+								<div className="doe">
+                    <a href="/api">John Doe @JohnDoe 16h</a>
+							</div>
+						</div>
+						<div className="text">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              </div>
+							<span className="likes">
+                    <a href="/api">
+                      <FontAwesomeIcon icon={faComment} />
+                      12
+                    </a>
+                    <a href="/api">
+                      <FontAwesomeIcon icon={faRetweet} />
+                      27
+                    </a>
+                    <a href="/api">
+                      <FontAwesomeIcon icon={faHeart} />
+                      212
+                    </a>
+                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
+                  </span>
+          </div>
+          <hr />
+					<div className="image">
+						<div className="image image-profile">
+							<a href="/profile"><img src={ pup } alt="" id="photo" /></a>
 							</div>
 						<div className="css-3">
 							<div className="css-3 happening">
@@ -189,7 +286,7 @@ function Home() {
           <hr />
 					<div className="image">
 						<div className="image image-profile">
-							<a href="/profile"><img src={ grace } alt="" id="photo" /></a>
+							<a href="/profile"><img src={ me } alt="" id="photo" /></a>
 							</div>
 						<div className="css-3">
 							<div className="css-3 happening">
@@ -219,106 +316,6 @@ function Home() {
                     <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
                   </span>
           </div>
-          <hr />
-					<div className="image">
-						<div className="image image-profile">
-							<a href="/profile"><img src={ grace } alt="" id="photo" /></a>
-							</div>
-						<div className="css-3">
-							<div className="css-3 happening">
-								<a href="/api" id="happening-link">Computer Programming</a>
-							</div>
-
-								<div className="doe">
-                    <a href="/api">John Doe @JohnDoe 16h</a>
-							</div>
-						</div>
-						<div className="text">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-              </div>
-							<span className="likes">
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faComment} />
-                      12
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faRetweet} />
-                      27
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faHeart} />
-                      212
-                    </a>
-                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
-                  </span>
-          </div>
-          <hr />
-					<div className="image">
-						<div className="image image-profile">
-							<a href="/profile"><img src={ grace } alt="" id="photo" /></a>
-							</div>
-						<div className="css-3">
-							<div className="css-3 happening">
-								<a href="/api" id="happening-link">Computer Programming</a>
-							</div>
-
-								<div className="doe">
-                    <a href="/api">John Doe @JohnDoe 16h</a>
-							</div>
-						</div>
-						<div className="text">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-              </div>
-							<span className="likes">
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faComment} />
-                      12
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faRetweet} />
-                      27
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faHeart} />
-                      212
-                    </a>
-                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
-                  </span>
-          </div>
-          <hr />
-					<div className="image">
-						<div className="image image-profile">
-							<a href="/profile"><img src={ grace } alt="" id="photo" /></a>
-							</div>
-						<div className="css-3">
-							<div className="css-3 happening">
-								<a href="/api" id="happening-link">Computer Programming</a>
-							</div>
-
-								<div className="doe">
-                    <a href="/api">John Doe @JohnDoe 16h</a>
-							</div>
-						</div>
-						<div className="text">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-              </div>
-							<span className="likes">
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faComment} />
-                      12
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faRetweet} />
-                      27
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faHeart} />
-                      212
-                    </a>
-                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
-                  </span>
-          </div>
-          <hr />
         </div>
         <div className="column-three">
           <div className="row-search">
@@ -367,7 +364,7 @@ function Home() {
             <hr />
             <div className="image">
               <div className="image image-profile">
-								<img src={grace} alt="" />
+								<img src={me} alt="" />
               </div>
               <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
               <div className="handle"><span>@alipay</span></div>
@@ -376,7 +373,7 @@ function Home() {
 						<hr/>
             <div className="image">
               <div className="image image-profile">
-								<img src={grace} alt="" />
+								<img src={curly} alt="" />
               </div>
               <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
               <div className="handle"><span>@alipay</span></div>
@@ -385,7 +382,7 @@ function Home() {
 						<hr/>
             <div className="image">
               <div className="image image-profile">
-								<img src={grace} alt="" />
+								<img src={pup} alt="" />
               </div>
               <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
               <div className="handle"><span>@alipay</span></div>
@@ -394,7 +391,7 @@ function Home() {
 						<hr/>
             <div className="image">
               <div className="image image-profile">
-								<img src={grace} alt="" />
+								<img src={me} alt="" />
               </div>
               <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
               <div className="handle"><span>@alipay</span></div>
@@ -403,7 +400,7 @@ function Home() {
 						<hr/>
             <div className="image">
               <div className="image image-profile">
-								<img src={grace} alt="" />
+								<img src={curly} alt="" />
               </div>
               <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
               <div className="handle"><span>@alipay</span></div>
