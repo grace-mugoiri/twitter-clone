@@ -20,35 +20,35 @@ function Home() {
             </a>
             <div className="css-3">
               <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faHome} />
+                <FontAwesomeIcon icon={faHome} /><span>Home</span>
               </a>
               <div className="css-3">
                 <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faHashtag} />
+                  <FontAwesomeIcon icon={faHashtag} /><span>Explore</span>
                 </a>
                 <div className="css-3">
                   <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faBell} />
+                    <FontAwesomeIcon icon={faBell} /><span>Notifications</span>
                   </a>
                   <div className="css-3">
                     <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faEnvelope} />
+                      <FontAwesomeIcon icon={faEnvelope} /><span>Messages</span>
                     </a>
                     <div className="css-3">
                       <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faBookmark} />
+                        <FontAwesomeIcon icon={faBookmark} /><span>Bookmark</span>
                       </a>
                       <div className="css-3">
                         <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                          <FontAwesomeIcon icon={faListAlt} />
+                          <FontAwesomeIcon icon={faListAlt} /><span>List</span>
                         </a>
                         <div className="css-3">
                           <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon icon={faUserCircle} />
+                            <FontAwesomeIcon icon={faUserCircle} /><span>Profile</span>
                           </a>
                           <div className="css-3">
                             <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                              <FontAwesomeIcon icon={faEllipsisH} />
+                              <FontAwesomeIcon icon={faEllipsisH} /><span>More</span>
                             </a>
                             {/* <div>
 						<button className="add-tweet-plus">
