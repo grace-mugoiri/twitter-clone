@@ -14,57 +14,91 @@ function Home() {
     <>
       <div className="row">
         <div className="column-one">
-          <div className="css-3">
-            <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-            <div className="css-3">
-              <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faHome} /><span>Home</span>
-              </a>
-              <div className="css-3">
-                <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faHashtag} /><span>Explore</span>
-                </a>
-                <div className="css-3">
-                  <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faBell} /><span>Notifications</span>
-                  </a>
-                  <div className="css-3">
-                    <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faEnvelope} /><span>Messages</span>
-                    </a>
-                    <div className="css-3">
-                      <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faBookmark} /><span>Bookmark</span>
-                      </a>
-                      <div className="css-3">
-                        <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                          <FontAwesomeIcon icon={faListAlt} /><span>List</span>
-                        </a>
-                        <div className="css-3">
-                          <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon icon={faUserCircle} /><span>Profile</span>
-                          </a>
-                          <div className="css-3">
-                            <a href="/api/tweets" target="_blank" rel="noopener noreferrer">
-                              <FontAwesomeIcon icon={faEllipsisH} /><span>More</span>
-                            </a>
-                            {/* <div>
-						<button className="add-tweet-plus">
-							<FontAwesomeIcon icon={faPlus} />
-						</button>
-					</div> */}
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+					<div className="css-3">
+						<nav aria-label="Primary" role="navigation" className="css-3">
+							<a href="/home" className="anchor-tab css-3">
+								<div className="css-3 anchor-div">
+										<div className="css-3">
+											<FontAwesomeIcon icon={faHome}
+											/>
+									</div>
+										<div dir="auto" className="css-901oao ">
+											<span className="css-901oao">Home</span>
+										</div>
+								</div>
+							</a>
+							<a href="/home" className="anchor-tab css-3">
+								<div className="css-3 anchor-div">
+										<div className="css-3">
+											<FontAwesomeIcon icon={faHashtag}
+											/>
+									</div>
+										<div dir="auto" className="css-901oao ">
+											<span className="css-901oao">Explore</span>
+										</div>
+								</div>
+							</a>
+							<a href="/home" className="anchor-tab css-3">
+								<div className="css-3 anchor-div">
+										<div className="css-3">
+											<FontAwesomeIcon icon={faBell}
+											/>
+									</div>
+										<div dir="auto" className="css-901oao ">
+											<span className="css-901oao">Notifications</span>
+										</div>
+								</div>
+							</a>
+							<a href="/home" className="anchor-tab css-3">
+								<div className="css-3 anchor-div">
+										<div className="css-3">
+											<FontAwesomeIcon icon={faEnvelope}
+											/>
+									</div>
+										<div dir="auto" className="css-901oao ">
+											<span className="css-901oao">Messages</span>
+										</div>
+								</div>
+							</a>
+							<a href="/home" className="anchor-tab css-3">
+								<div className="css-3 anchor-div">
+										<div className="css-3">
+											<FontAwesomeIcon icon={faUserCircle}
+											/>
+									</div>
+										<div dir="auto" className="css-901oao ">
+											<span className="css-901oao">Profile</span>
+										</div>
+								</div>
+							</a>
+							<a href="/home" className="anchor-tab css-3">
+								<div className="css-3 anchor-div">
+										<div className="css-3">
+											<FontAwesomeIcon icon={faEllipsisH}
+											/>
+									</div>
+										<div dir="auto" className="css-901oao ">
+											<span className="css-901oao">More</span>
+										</div>
+								</div>
+							</a>
+							{/* <div aria-expanded="false" aria-haspopup="true" aria-label="More menu items" role="button" data-focusable="true" tabIndex="0" className="css-18t94o4 css-3 r-1habvwh r-6koalj r-eqz5dr r-16y2uox r-1ny4l3l r-rjfia r-13qz1uu" data-testid="AppTabBar_More_Menu">
+								<div className="css-3 r-1awozwy r-sdzlij r-18u37iz r-1777fci r-dnmrzs r-xyw6el r-o7ynqc r-6416eg">
+									<div className="css-3">
+										<svg viewBox="0 0 24 24" className="r-1fmj7o5 r-4qtqp9 r-yyyyoo r-lwhw9o r-dnmrzs r-bnwqim r-1plcrui r-lrvibr">
+											<g>
+												<circle cx="17" cy="12" r="1.5" />
+												<circle cx="12" cy="12" r="1.5" />
+												<circle cx="7" cy="12" r="1.5" />
+												<path d="M12 22.75C6.072 22.75 1.25 17.928 1.25 12S6.072 1.25 12 1.25 22.75 6.072 22.75 12 17.928 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75z" />
+											</g>
+										</svg>
+									</div>
+									<div dir="auto" className="css-901oao css-bfa6kz r-1fmj7o5 r-1qd0xha r-1b6yd1w r-b88u0q r-ad9z0x r-1joea0r r-88pszg r-bcqeeo r-qvutc0"><span className="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">More</span></div>
+								</div>
+							</div> */}
+						</nav>
+					</div>
 
         </div>
         <div className="column-two">
