@@ -114,7 +114,7 @@ hr {
   left: 0px;
   padding-bottom: 100%;
   width: 100%;
-  display: block;
+	display: block;
 }
 .image-profile img {
   cursor: pointer;
@@ -282,7 +282,7 @@ flex-grow: 1;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif;
   line-height: 1.3125;
-  margin-left: 2px;
+  margin-left: 20px;
   margin-top: 0px;
   text-decoration: none;
 }
@@ -466,8 +466,6 @@ flex-grow: 1;
   border-radius: 9999px;
 }
 
-
-
 .trends {
   margin-bottom: 15px;
   border-radius: 16px;
@@ -482,7 +480,10 @@ flex-grow: 1;
   padding-top: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  background-color: rgb(61, 65, 69);
+	background-color: rgb(61, 65, 69);
+	color: white;
+	font-weight: 600;
+
 }
 
 #trends {
@@ -501,7 +502,8 @@ flex-grow: 1;
   border-color: rgba(0, 0, 0, 0);
   border-width: 1px;
   border-style: solid;
-  border-radius: 9999px;
+	border-radius: 9999px;
+
 }
 
 .trending-news {
@@ -709,9 +711,10 @@ flex-grow: 1;
   overflow-wrap: break-word;
   min-width: 0px;
   color: rgb(217, 217, 217);
-  margin-left: 60px;
-  margin-top: 25px;
-  text-decoration: none;
+  margin-left: 52px;
+  margin-top: 20px;
+	text-decoration: none;
+	padding-top: 10px;
 }
 .doe p {
   outline-style: none;
