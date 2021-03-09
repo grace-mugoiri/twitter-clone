@@ -126,10 +126,11 @@ function Home() {
 
         </div>
         <div className="column-two">
-          <div className="css-3">
-            <div id="topbar">
-              Home
-
+          <div className="css-3-home">
+            <div id="topbar" className="css-3-home">
+							<h2>
+								<span className="topbar-home">Home</span>
+							</h2>
             </div>
           </div>
           <hr />
@@ -145,42 +146,46 @@ function Home() {
                 </span>
               </div>
 
-              <div className="css-3-others">
-                <div className="css-icons">
-                  <a href="/api/tweets">
-                    <FontAwesomeIcon icon={faPhotoVideo} />
-                  </a>
-                  <div className="css-3-others">
-                    <a href="/api/tweets">
-                      <FontAwesomeIcon icon={faVideo} />
-                    </a>
-                    <div className="css-3-others">
-                      <a href="/api/tweets">
-                        <FontAwesomeIcon icon={faPollH} />
-                      </a>
-                      <div className="css-3-others">
-                        <a href="/api/tweets">
-                <FontAwesomeIcon icon={faSmileBeam} />
-              </a>
+							<div className="css-3-others">
+								<div className="css-icons">
+									<a href="/api/tweets">
+										<FontAwesomeIcon icon={faPhotoVideo} />
+									</a>
+									<div className="css-icons">
+										<a href="/api/tweets">
+											<FontAwesomeIcon icon={faVideo} />
+										</a>
+										<div className="css-icons">
+											<a href="/api/tweets">
+												<FontAwesomeIcon icon={faPollH} />
+											</a>
+											<div className="css-icons">
+												<a href="/api/tweets">
+													<FontAwesomeIcon icon={faSmileBeam} />
+												</a>
 
-                        <div className="css-3-others">
-                <a href="/api/tweets">
-                  <FontAwesomeIcon icon={faCalendarAlt} />
-                </a>
+												<div className="css-icons">
+													<a href="/api/tweets">
+														<FontAwesomeIcon icon={faCalendarAlt} />
+													</a>
 
-                {/* <h1 className="w3-jumbo"> Twitter Clone </h1> */}
-                {/* <button className="w3-button w3-pink" style={{ marginRight: '1rem' }} onClick={() => (window.location = '/login')}>Login</button> */}
-                {/* <button className="w3-button w3-pink" onClick={() => (window.location = '/register')}> Register</button> */}
+												<div className="css-icons">
+													<a href="/api/tweets">
+														<button id="tweet-button">Tweet</button>
+													</a>
+													</div>
 												</div>
-												<button id="tweet-button">Tweet</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
             </div>
-          </div>
-          <hr />
+					</div>
+
+					<div className="css-3-home line-break"></div>
+
           <div className="image">
             <div className="image image-profile">
               <a href="/profile"><img src={pup} alt="" id="photo" /></a>
@@ -247,6 +252,38 @@ function Home() {
             </span>
           </div>
           <hr />
+          <div className="image">
+            <div className="image image-profile">
+              <a href="/profile"><img src={curly} alt="" id="photo" /></a>
+            </div>
+            <div className="css-3">
+              <div className="css-3 happening">
+                <a href="/api" id="happening-link">Computer Programming</a>
+              </div>
+
+              <div className="doe">
+                <a href="/api">John Doe @JohnDoe 16h</a>
+              </div>
+            </div>
+            <div className="text">
+              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+            <span className="likes">
+              <a href="/api">
+                <FontAwesomeIcon icon={faComment} />
+                12
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faRetweet} />
+                27
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faHeart} />
+                212
+              </a>
+              <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
+            </span>
+          </div>
           <div className="image">
             <div className="image image-profile">
               <a href="/profile"><img src={curly} alt="" id="photo" /></a>
