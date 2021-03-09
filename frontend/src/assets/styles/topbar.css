@@ -29,10 +29,10 @@ hr {
   padding-bottom: 10px;
   padding-top: 10px;
   padding-left: 1px;
-  padding-right: 1px;
+  padding-right: 0.5px;
 	height: 100%;
   min-width: 30px;
-  border-right: 1px solid white;
+  /* border-right: 1px solid white; */
 }
 .column-two {
   float: left;
@@ -51,6 +51,7 @@ hr {
   padding-left: 15px;
   padding-right: 15px;
 }
+
 .image {
   -moz-box-align: stretch;
   -moz-box-direction: normal;
@@ -186,15 +187,12 @@ flex-grow: 1;
 }
 
 .anchor-div {
-	/* -moz-box-align: center; */
-	/* align-items: center; */
 	-moz-box-direction: normal;
 	-moz-box-orient: horizontal;
 	flex-direction: row;
 	-moz-box-pack: center;
-	/* justify-content: center; */
 	max-width: 100%;
-	padding-left: 10px;
+	padding-left: 5px;
 	transition-duration: 0.2s;
 	transition-property: background-color, box-shadow;
 
@@ -309,7 +307,7 @@ white-space: nowrap;
 .css-3-others a {
   color: #1da1f2;
   align-items: stretch;
-  margin-left: 20px;
+  margin-left: 15px;
   float: left;
   line-height: 1.3125;
   padding: 0.1px;
@@ -317,7 +315,7 @@ white-space: nowrap;
 
 .css-3-others button {
   opacity: 0.9;
-  margin-left: 90px;
+  margin-left: 390px;
   min-width: calc(62.79px);
   min-height: 39px;
   background-color: #1da1f2;
@@ -325,7 +323,8 @@ white-space: nowrap;
   transition-duration: 0.2s;
   height: 0px;
   user-select: none;
-  padding-left: 1em;
+	padding-left: 1em;
+	margin-top: 12px;
   padding-right: 1em;
   border-width: 1px;
   border-style: solid;

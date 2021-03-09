@@ -6,7 +6,7 @@ import me from '../assets/images/me.jpg';
 import pup from '../assets/images/pup.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faPhotoVideo, faPollH, faSmileBeam, faCalendarAlt, faRetweet, faShare, faHeart, faComment, faVideo, faHashtag, faPlus, faHome, faBell, faEllipsisH, faBookmark, faEnvelope, faListAlt, faUserCircle,
+  faPhotoVideo, faPollH, faSmileBeam, faCalendarAlt, faRetweet, faShare, faHeart, faComment, faVideo, faHashtag, faHome, faBell, faEllipsisH, faBookmark, faEnvelope, faListAlt, faUserCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 function Home() {
@@ -14,75 +14,99 @@ function Home() {
     <>
       <div className="row">
         <div className="column-one">
-					<div className="css-3">
-						<nav aria-label="Primary" role="navigation" className="css-3">
-							<a href="/home" className="anchor-tab css-3">
-								<div className="css-3 anchor-div">
-										<div className="css-3">
-											<FontAwesomeIcon icon={faHome}
-											/>
-									</div>
-										<div dir="auto" className="css-901oao ">
-											<span className="css-901oao">Home</span>
-										</div>
-								</div>
-							</a>
-							<a href="/home" className="anchor-tab css-3">
-								<div className="css-3 anchor-div">
-										<div className="css-3">
-											<FontAwesomeIcon icon={faHashtag}
-											/>
-									</div>
-										<div dir="auto" className="css-901oao ">
-											<span className="css-901oao">Explore</span>
-										</div>
-								</div>
-							</a>
-							<a href="/home" className="anchor-tab css-3">
-								<div className="css-3 anchor-div">
-										<div className="css-3">
-											<FontAwesomeIcon icon={faBell}
-											/>
-									</div>
-										<div dir="auto" className="css-901oao ">
-											<span className="css-901oao">Notifications</span>
-										</div>
-								</div>
-							</a>
-							<a href="/home" className="anchor-tab css-3">
-								<div className="css-3 anchor-div">
-										<div className="css-3">
-											<FontAwesomeIcon icon={faEnvelope}
-											/>
-									</div>
-										<div dir="auto" className="css-901oao ">
-											<span className="css-901oao">Messages</span>
-										</div>
-								</div>
-							</a>
-							<a href="/home" className="anchor-tab css-3">
-								<div className="css-3 anchor-div">
-										<div className="css-3">
-											<FontAwesomeIcon icon={faUserCircle}
-											/>
-									</div>
-										<div dir="auto" className="css-901oao ">
-											<span className="css-901oao">Profile</span>
-										</div>
-								</div>
-							</a>
-							<a href="/home" className="anchor-tab css-3">
-								<div className="css-3 anchor-div">
-										<div className="css-3">
-											<FontAwesomeIcon icon={faEllipsisH}
-											/>
-									</div>
-										<div dir="auto" className="css-901oao ">
-											<span className="css-901oao">More</span>
-										</div>
-								</div>
-							</a>
-							{/* <div aria-expanded="false" aria-haspopup="true" aria-label="More menu items" role="button" data-focusable="true" tabIndex="0" className="css-18t94o4 css-3 r-1habvwh r-6koalj r-eqz5dr r-16y2uox r-1ny4l3l r-rjfia r-13qz1uu" data-testid="AppTabBar_More_Menu">
+          <div className="css-3">
+            <nav aria-label="Primary" role="navigation" className="css-3">
+              <a href="/home" className="anchor-tab css-3">
+                <div className="css-3 anchor-div">
+                  <div className="css-3">
+                    <FontAwesomeIcon icon={faTwitter} />
+                  </div>
+                  <div dir="auto" className="css-901oao ">
+                    <span className="css-901oao" />
+                  </div>
+                </div>
+              </a>
+              <a href="/home" className="anchor-tab css-3">
+                <div className="css-3 anchor-div">
+                  <div className="css-3">
+                    <FontAwesomeIcon icon={faHome} />
+                  </div>
+                  <div dir="auto" className="css-901oao ">
+                    <span className="css-901oao">Home</span>
+                  </div>
+                </div>
+              </a>
+              <a href="/home" className="anchor-tab css-3">
+                <div className="css-3 anchor-div">
+                  <div className="css-3">
+                    <FontAwesomeIcon icon={faHashtag} />
+                  </div>
+                  <div dir="auto" className="css-901oao ">
+                    <span className="css-901oao">Explore</span>
+                  </div>
+                </div>
+              </a>
+              <a href="/home" className="anchor-tab css-3">
+                <div className="css-3 anchor-div">
+                  <div className="css-3">
+                    <FontAwesomeIcon icon={faBell} />
+                  </div>
+                  <div dir="auto" className="css-901oao ">
+                    <span className="css-901oao">Notifications</span>
+                  </div>
+                </div>
+              </a>
+              <a href="/home" className="anchor-tab css-3">
+                <div className="css-3 anchor-div">
+                  <div className="css-3">
+                    <FontAwesomeIcon icon={faEnvelope} />
+                  </div>
+                  <div dir="auto" className="css-901oao ">
+                    <span className="css-901oao">Messages</span>
+                  </div>
+                </div>
+              </a>
+              <a href="/home" className="anchor-tab css-3">
+                <div className="css-3 anchor-div">
+                  <div className="css-3">
+                    <FontAwesomeIcon icon={faBookmark} />
+                  </div>
+                  <div dir="auto" className="css-901oao ">
+                    <span className="css-901oao">Bookmarks</span>
+                  </div>
+                </div>
+              </a>
+              <a href="/home" className="anchor-tab css-3">
+                <div className="css-3 anchor-div">
+                  <div className="css-3">
+                    <FontAwesomeIcon icon={faListAlt} />
+                  </div>
+                  <div dir="auto" className="css-901oao ">
+                    <span className="css-901oao">Lists</span>
+                  </div>
+                </div>
+              </a>
+              <a href="/home" className="anchor-tab css-3">
+                <div className="css-3 anchor-div">
+                  <div className="css-3">
+                    <FontAwesomeIcon icon={faUserCircle} />
+                  </div>
+                  <div dir="auto" className="css-901oao ">
+                    <span className="css-901oao">Profile</span>
+                  </div>
+                </div>
+              </a>
+              <a href="/home" className="anchor-tab css-3">
+                <div className="css-3 anchor-div">
+                  <div className="css-3">
+                    <FontAwesomeIcon icon={faEllipsisH} />
+                  </div>
+                  <div dir="auto" className="css-901oao ">
+                    <span className="css-901oao">More</span>
+                  </div>
+                </div>
+              </a>
+              {/* <div aria-expanded="false" aria-haspopup="true" aria-label="More menu items" role="button" data-focusable="true" tabIndex="0" className="css-18t94o4 css-3 r-1habvwh r-6koalj r-eqz5dr r-16y2uox r-1ny4l3l r-rjfia r-13qz1uu" data-testid="AppTabBar_More_Menu">
 								<div className="css-3 r-1awozwy r-sdzlij r-18u37iz r-1777fci r-dnmrzs r-xyw6el r-o7ynqc r-6416eg">
 									<div className="css-3">
 										<svg viewBox="0 0 24 24" className="r-1fmj7o5 r-4qtqp9 r-yyyyoo r-lwhw9o r-dnmrzs r-bnwqim r-1plcrui r-lrvibr">
@@ -97,8 +121,8 @@ function Home() {
 									<div dir="auto" className="css-901oao css-bfa6kz r-1fmj7o5 r-1qd0xha r-1b6yd1w r-b88u0q r-ad9z0x r-1joea0r r-88pszg r-bcqeeo r-qvutc0"><span className="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">More</span></div>
 								</div>
 							</div> */}
-						</nav>
-					</div>
+            </nav>
+          </div>
 
         </div>
         <div className="column-two">
@@ -111,244 +135,248 @@ function Home() {
           <hr />
 
           <div className="image">
-						<div className="image image-profile">
-							<a href="/profile"><img src={grace} alt="" /></a>
-						</div>
-						<div className="css-3">
-							<div className="css-3 happening">
-								<span>
-										What's happening?</span></div>
+            <div className="image image-profile">
+              <a href="/profile"><img src={grace} alt="" /></a>
+            </div>
+            <div className="css-3">
+              <div className="css-3 happening">
+                <span>
+                  What's happening?
+                </span>
+              </div>
+
               <div className="css-3-others">
-								<div className="css-icons">
-                <a href="/api/tweets">
-                  <FontAwesomeIcon icon={faPhotoVideo} />
-                </a>
-                <div className="css-3-others">
+                <div className="css-icons">
                   <a href="/api/tweets">
-                    <FontAwesomeIcon icon={faVideo} />
+                    <FontAwesomeIcon icon={faPhotoVideo} />
                   </a>
                   <div className="css-3-others">
                     <a href="/api/tweets">
-                      <FontAwesomeIcon icon={faPollH} />
+                      <FontAwesomeIcon icon={faVideo} />
                     </a>
                     <div className="css-3-others">
                       <a href="/api/tweets">
-                        <FontAwesomeIcon icon={faSmileBeam} />
+                        <FontAwesomeIcon icon={faPollH} />
                       </a>
-
                       <div className="css-3-others">
                         <a href="/api/tweets">
-                          <FontAwesomeIcon icon={faCalendarAlt} />
-                        </a>
-                        <button id="tweet-button">Tweet</button>
-                        {/* <h1 className="w3-jumbo"> Twitter Clone </h1> */}
-                        {/* <button className="w3-button w3-pink" style={{ marginRight: '1rem' }} onClick={() => (window.location = '/login')}>Login</button> */}
-                        {/* <button className="w3-button w3-pink" onClick={() => (window.location = '/register')}> Register</button> */}
+                <FontAwesomeIcon icon={faSmileBeam} />
+              </a>
+
+                        <div className="css-3-others">
+                <a href="/api/tweets">
+                  <FontAwesomeIcon icon={faCalendarAlt} />
+                </a>
+
+                {/* <h1 className="w3-jumbo"> Twitter Clone </h1> */}
+                {/* <button className="w3-button w3-pink" style={{ marginRight: '1rem' }} onClick={() => (window.location = '/login')}>Login</button> */}
+                {/* <button className="w3-button w3-pink" onClick={() => (window.location = '/register')}> Register</button> */}
+												</div>
+												<button id="tweet-button">Tweet</button>
                       </div>
                     </div>
-										</div>
-										</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <hr />
-					<div className="image">
-						<div className="image image-profile">
-							<a href="/profile"><img src={ pup } alt="" id="photo" /></a>
-							</div>
-						<div className="css-3">
-							<div className="css-3 happening">
-								<a href="/api" id="happening-link">Computer Programming</a>
-							</div>
-
-								<div className="doe">
-                    <a href="/api">John Doe @JohnDoe 16h</a>
-							</div>
-						</div>
-						<div className="text">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          <div className="image">
+            <div className="image image-profile">
+              <a href="/profile"><img src={pup} alt="" id="photo" /></a>
+            </div>
+            <div className="css-3">
+              <div className="css-3 happening">
+                <a href="/api" id="happening-link">Computer Programming</a>
               </div>
-							<span className="likes">
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faComment} />
-                      12
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faRetweet} />
-                      27
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faHeart} />
-                      212
-                    </a>
-                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
-                  </span>
+
+              <div className="doe">
+                <a href="/api">John Doe @JohnDoe 16h</a>
+              </div>
+            </div>
+            <div className="text">
+              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+            <span className="likes">
+              <a href="/api">
+                <FontAwesomeIcon icon={faComment} />
+                12
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faRetweet} />
+                27
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faHeart} />
+                212
+              </a>
+              <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
+            </span>
           </div>
           <hr />
-					<div className="image">
-						<div className="image image-profile">
-							<a href="/profile"><img src={ me } alt="" id="photo" /></a>
-							</div>
-						<div className="css-3">
-							<div className="css-3 happening">
-								<a href="/api" id="happening-link">Computer Programming</a>
-							</div>
-
-								<div className="doe">
-                    <a href="/api">John Doe @JohnDoe 16h</a>
-							</div>
-						</div>
-						<div className="text">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          <div className="image">
+            <div className="image image-profile">
+              <a href="/profile"><img src={me} alt="" id="photo" /></a>
+            </div>
+            <div className="css-3">
+              <div className="css-3 happening">
+                <a href="/api" id="happening-link">Computer Programming</a>
               </div>
-							<span className="likes">
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faComment} />
-                      12
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faRetweet} />
-                      27
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faHeart} />
-                      212
-                    </a>
-                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
-                  </span>
+
+              <div className="doe">
+                <a href="/api">John Doe @JohnDoe 16h</a>
+              </div>
+            </div>
+            <div className="text">
+              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+            <span className="likes">
+              <a href="/api">
+                <FontAwesomeIcon icon={faComment} />
+                12
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faRetweet} />
+                27
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faHeart} />
+                212
+              </a>
+              <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
+            </span>
           </div>
           <hr />
-					<div className="image">
-						<div className="image image-profile">
-							<a href="/profile"><img src={ curly } alt="" id="photo" /></a>
-							</div>
-						<div className="css-3">
-							<div className="css-3 happening">
-								<a href="/api" id="happening-link">Computer Programming</a>
-							</div>
-
-								<div className="doe">
-                    <a href="/api">John Doe @JohnDoe 16h</a>
-							</div>
-						</div>
-						<div className="text">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          <div className="image">
+            <div className="image image-profile">
+              <a href="/profile"><img src={curly} alt="" id="photo" /></a>
+            </div>
+            <div className="css-3">
+              <div className="css-3 happening">
+                <a href="/api" id="happening-link">Computer Programming</a>
               </div>
-							<span className="likes">
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faComment} />
-                      12
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faRetweet} />
-                      27
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faHeart} />
-                      212
-                    </a>
-                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
-                  </span>
+
+              <div className="doe">
+                <a href="/api">John Doe @JohnDoe 16h</a>
+              </div>
+            </div>
+            <div className="text">
+              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+            <span className="likes">
+              <a href="/api">
+                <FontAwesomeIcon icon={faComment} />
+                12
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faRetweet} />
+                27
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faHeart} />
+                212
+              </a>
+              <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
+            </span>
           </div>
           <hr />
-					<div className="image">
-						<div className="image image-profile">
-							<a href="/profile"><img src={ pup } alt="" id="photo" /></a>
-							</div>
-						<div className="css-3">
-							<div className="css-3 happening">
-								<a href="/api" id="happening-link">Computer Programming</a>
-							</div>
-
-								<div className="doe">
-                    <a href="/api">John Doe @JohnDoe 16h</a>
-							</div>
-						</div>
-						<div className="text">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          <div className="image">
+            <div className="image image-profile">
+              <a href="/profile"><img src={pup} alt="" id="photo" /></a>
+            </div>
+            <div className="css-3">
+              <div className="css-3 happening">
+                <a href="/api" id="happening-link">Computer Programming</a>
               </div>
-							<span className="likes">
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faComment} />
-                      12
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faRetweet} />
-                      27
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faHeart} />
-                      212
-                    </a>
-                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
-                  </span>
+
+              <div className="doe">
+                <a href="/api">John Doe @JohnDoe 16h</a>
+              </div>
+            </div>
+            <div className="text">
+              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+            <span className="likes">
+              <a href="/api">
+                <FontAwesomeIcon icon={faComment} />
+                12
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faRetweet} />
+                27
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faHeart} />
+                212
+              </a>
+              <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
+            </span>
           </div>
           <hr />
-					<div className="image">
-						<div className="image image-profile">
-							<a href="/profile"><img src={ grace } alt="" id="photo" /></a>
-							</div>
-						<div className="css-3">
-							<div className="css-3 happening">
-								<a href="/api" id="happening-link">Computer Programming</a>
-							</div>
-
-								<div className="doe">
-                    <a href="/api">John Doe @JohnDoe 16h</a>
-							</div>
-						</div>
-						<div className="text">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          <div className="image">
+            <div className="image image-profile">
+              <a href="/profile"><img src={grace} alt="" id="photo" /></a>
+            </div>
+            <div className="css-3">
+              <div className="css-3 happening">
+                <a href="/api" id="happening-link">Computer Programming</a>
               </div>
-							<span className="likes">
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faComment} />
-                      12
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faRetweet} />
-                      27
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faHeart} />
-                      212
-                    </a>
-                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
-                  </span>
+
+              <div className="doe">
+                <a href="/api">John Doe @JohnDoe 16h</a>
+              </div>
+            </div>
+            <div className="text">
+              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+            <span className="likes">
+              <a href="/api">
+                <FontAwesomeIcon icon={faComment} />
+                12
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faRetweet} />
+                27
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faHeart} />
+                212
+              </a>
+              <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
+            </span>
           </div>
           <hr />
-					<div className="image">
-						<div className="image image-profile">
-							<a href="/profile"><img src={ me } alt="" id="photo" /></a>
-							</div>
-						<div className="css-3">
-							<div className="css-3 happening">
-								<a href="/api" id="happening-link">Computer Programming</a>
-							</div>
-
-								<div className="doe">
-                    <a href="/api">John Doe @JohnDoe 16h</a>
-							</div>
-						</div>
-						<div className="text">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          <div className="image">
+            <div className="image image-profile">
+              <a href="/profile"><img src={me} alt="" id="photo" /></a>
+            </div>
+            <div className="css-3">
+              <div className="css-3 happening">
+                <a href="/api" id="happening-link">Computer Programming</a>
               </div>
-							<span className="likes">
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faComment} />
-                      12
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faRetweet} />
-                      27
-                    </a>
-                    <a href="/api">
-                      <FontAwesomeIcon icon={faHeart} />
-                      212
-                    </a>
-                    <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
-                  </span>
+
+              <div className="doe">
+                <a href="/api">John Doe @JohnDoe 16h</a>
+              </div>
+            </div>
+            <div className="text">
+              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            </div>
+            <span className="likes">
+              <a href="/api">
+                <FontAwesomeIcon icon={faComment} />
+                12
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faRetweet} />
+                27
+              </a>
+              <a href="/api">
+                <FontAwesomeIcon icon={faHeart} />
+                212
+              </a>
+              <a href="/api"><FontAwesomeIcon icon={faShare} /></a>
+            </span>
           </div>
         </div>
         <div className="column-three">
@@ -398,54 +426,90 @@ function Home() {
             <hr />
             <div className="image">
               <div className="image image-profile">
-								<img src={me} alt="" />
+                <img src={me} alt="" />
               </div>
-              <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
+              <div className="name">
+                <span>
+                  {' '}
+                  <a href="/profile">AliPay</a>
+                  {' '}
+                </span>
+              </div>
               <div className="handle"><span>@alipay</span></div>
               <div className="follow-handle"><button>Follow</button></div>
             </div>
-						<hr/>
+            <hr />
             <div className="image">
               <div className="image image-profile">
-								<img src={curly} alt="" />
+                <img src={curly} alt="" />
               </div>
-              <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
+              <div className="name">
+                <span>
+                  {' '}
+                  <a href="/profile">AliPay</a>
+                  {' '}
+                </span>
+              </div>
               <div className="handle"><span>@alipay</span></div>
               <div className="follow-handle"><button>Follow</button></div>
             </div>
-						<hr/>
+            <hr />
             <div className="image">
               <div className="image image-profile">
-								<img src={pup} alt="" />
+                <img src={pup} alt="" />
               </div>
-              <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
+              <div className="name">
+                <span>
+                  {' '}
+                  <a href="/profile">AliPay</a>
+                  {' '}
+                </span>
+              </div>
               <div className="handle"><span>@alipay</span></div>
               <div className="follow-handle"><button>Follow</button></div>
             </div>
-						<hr/>
+            <hr />
             <div className="image">
               <div className="image image-profile">
-								<img src={me} alt="" />
+                <img src={me} alt="" />
               </div>
-              <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
+              <div className="name">
+                <span>
+                  {' '}
+                  <a href="/profile">AliPay</a>
+                  {' '}
+                </span>
+              </div>
               <div className="handle"><span>@alipay</span></div>
               <div className="follow-handle"><button>Follow</button></div>
             </div>
-						<hr/>
+            <hr />
             <div className="image">
               <div className="image image-profile">
-								<img src={curly} alt="" />
+                <img src={curly} alt="" />
               </div>
-              <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
+              <div className="name">
+                <span>
+                  {' '}
+                  <a href="/profile">AliPay</a>
+                  {' '}
+                </span>
+              </div>
               <div className="handle"><span>@alipay</span></div>
               <div className="follow-handle"><button>Follow</button></div>
-						</div>
-						<hr/>
+            </div>
+            <hr />
             <div className="image">
               <div className="image image-profile">
-								<img src={grace} alt="" />
+                <img src={grace} alt="" />
               </div>
-              <div className="name"><span> <a href="/profile">AliPay</a> </span></div>
+              <div className="name">
+                <span>
+                  {' '}
+                  <a href="/profile">AliPay</a>
+                  {' '}
+                </span>
+              </div>
               <div className="handle"><span>@alipay</span></div>
               <div className="follow-handle"><button>Follow</button></div>
             </div>
