@@ -39,7 +39,7 @@ def getUsers():
 def getUser(uid):
     users = User.query.all()
     user = list(filter(lambda x: x.id == uid, users))[0]
-    return {"id": user.id, "username": user.username, "email": user.email, "password": user.pwd}
+    return {"id": user.id, "email": user.email, "pwd": user.pwd}
 
 def addUser(username, email, pwd):
     try:
@@ -102,9 +102,9 @@ def delTweet(tid):
 class InvalidToken(db.Model):
     __tablename__ = "invalid_tokens"
     id = db.Column(db.Integer, primary_key=True)
-    jti = db.Column(db.String)
+    jti = db.Column(db.String(120))
 
-    def save(self):
+    def add(self):
         db.session.add(self)
         db.session.commit()
 
@@ -115,6 +115,14 @@ class InvalidToken(db.Model):
 
 # ROUTES
 
+@app.route('/home')
+def home():
+	return "Hello Home"
+
+@app.route("/users", methods=['GET'])
+def return_all():
+	return jsonify(getUsers())
+
 @jwt.token_in_blacklist_loader
 def check_if_blacklisted_token(decrypted):
     jti = decrypted["jti"]
@@ -124,9 +132,10 @@ def check_if_blacklisted_token(decrypted):
 def login():
     try:
         email = request.json["email"]
-        password = request.json["pwd"]
-        if email and password:
-            user = list(filter(lambda x: security.dec(x["email"]) == email and security.checkpwd(password, x["password"]) , getUsers()))
+        pwd = request.json["pwd"]
+        print(email, pwd)
+        if email and pwd:
+            user = list(filter(lambda x: security.dec(x["email"]) == email and security.checkpwd(pwd, x["pwd"]) , getUsers()))
             print("reached here")
             if len(user) == 1:
                 token = create_access_token(identity=user[0]["id"])
@@ -143,21 +152,25 @@ def login():
 
 @app.route("/api/register", methods=["GET", "POST"])
 def register():
+
     try:
         email = request.json["email"]
         email = email.lower()
-        password = security.encpwd(request.json["pwd"])
+        pwd = security.encpwd(request.json["pwd"])
         username = request.json["username"]
-        if not (email and password and username):
+        print(email, pwd, request.json["pwd"], username)
+
+        if not (email and pwd and username):
             return jsonify({"error": "Invalid form"})
 
         users = getUsers()
+        print(users)
 
         if (len(list(filter(lambda x: security.dec(x["email"] == email), users))) == 1):
             return jsonify({"error": "email is wrong"})
         if not re.match(r"[\w\._]{5,}@\w{3,}.\w{2,4}", email):
             return jsonify({"error": "email character"})
-        addUser(username, security.enc(email), password)
+        addUser(username, email, pwd)
         return jsonify({"success": True})
     except Exception as e:
         print(e)
@@ -239,11 +252,11 @@ def get_current_user():
 def change_password():
 	try:
 		user = User.query.get(get_jwt_identity())
-		if not (request.json["password"] and request.json["npassword"]):
+		if not (request.json["pwd"] and request.json["npwd"]):
 			return jsonify({"error": "Invalid form"})
-		if not user.pwd == request.json["password"]:
+		if not user.pwd == request.json["pwd"]:
 			return jsonify({"error": "Wrong password"})
-		user.pwd = request.json["npassword"]
+		user.pwd = request.json["npwd"]
 		db.session.add(user)
 		db.session.commit()
 		return jsonify({"success": True})
