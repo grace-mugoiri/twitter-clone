@@ -34,7 +34,7 @@ class User(db.Model):
 
 def getUsers():
     users = User.query.all()
-    return [{"id": i.id, "username": i.username, "email": i.email, "password": i.pwd} for i in users]
+    return [{"id": i.id, "username": i.username, "email": i.email, "pwd": i.pwd} for i in users]
 
 def getUser(uid):
     users = User.query.all()
@@ -135,8 +135,8 @@ def login():
         pwd = request.json["pwd"]
         print(email, pwd)
         if email and pwd:
-            user = list(filter(lambda x: security.dec(x["email"]) == email and security.checkpwd(pwd, x["pwd"]) , getUsers()))
-            print("reached here")
+            user = list(filter(lambda x: x["email"] == email and security.checkpwd(pwd, x["pwd"]) , getUsers()))
+            print(user)
             if len(user) == 1:
                 token = create_access_token(identity=user[0]["id"])
                 refresh_token = create_refresh_token(identity=user[0]["id"])
@@ -158,15 +158,14 @@ def register():
         email = email.lower()
         pwd = security.encpwd(request.json["pwd"])
         username = request.json["username"]
-        print(email, pwd, request.json["pwd"], username)
 
         if not (email and pwd and username):
             return jsonify({"error": "Invalid form"})
 
         users = getUsers()
-        print(users)
 
-        if (len(list(filter(lambda x: security.dec(x["email"] == email), users))) == 1):
+        # if (len(list(filter(lambda x: security.dec(x["email"] == email), users))) == 1):
+        if (len(list(filter(lambda x: x["email"] == email, users))) == 1):
             return jsonify({"error": "email is wrong"})
         if not re.match(r"[\w\._]{5,}@\w{3,}.\w{2,4}", email):
             return jsonify({"error": "email character"})
@@ -179,7 +178,7 @@ def register():
 @app.route("/api/checkiftokenexpire", methods=["POST"])
 @jwt_required
 def check_if_token_expire():
-    # print(get_jwt_identity())
+    print(get_jwt_identity())
     return jsonify({"success": True})
 
 @app.route("/api/refreshtoken", methods=["POST"])
