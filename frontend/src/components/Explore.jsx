@@ -605,25 +605,9 @@ function Home() {
               <div className="handle"><span>@alipay</span></div>
               <div className="follow-handle"><button>Follow</button></div>
             </div>
-					</div>
+          </div>
 
-					<div className="footer">
-						<span className="policy">
-							<a href="/terms">Terms of Service </a> .
-							<a href="/terms"> Privacy Policy </a> .
-							<a href="/terms"> Cookie Policy </a>
-						</span>
-
-						<div className="ads">
-							<a href="/terms">Ads info</a> .
-							<a href="/terms"> More...</a>
-							<a href="/terms"> &#169; 2021 Twitter, Inc. </a>
-						</div>
-
-					</div>
-				</div>
-
-
+        </div>
       </div>
     </>
   );

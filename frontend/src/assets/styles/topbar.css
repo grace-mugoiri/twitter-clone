@@ -295,8 +295,8 @@ flex-grow: 1;
 }
 .css-901oao span {
 	color: white;
-	font-weight: 600;
-
+	font-weight: 700;
+	font-size: 14px;
 }
 
 .css-3 a {
@@ -430,7 +430,7 @@ flex-grow: 1;
 .likes a {
   white-space: nowrap;
   color: rgb(217, 217, 217);
-  font-size: 15px;
+  /* font-size: 15px; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif;
   line-height: 1.3125;
@@ -748,7 +748,35 @@ flex-grow: 1;
   margin-left: 50px;
 }
 
+.footer a {
+	color: lightgray;
+	text-decoration: none;
+	font-size: 8px;
+}
+.policy {
+	white-space: nowrap;
+	color: rgb(217, 217, 217);
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+		Arial, sans-serif;
+	line-height: 1.3125;
+	overflow-wrap: break-word;
+	font-weight: lighter;
+	font-size: 8px;
+	text-decoration: none;
 
+}
+.ads {
+	white-space: nowrap;
+	color: rgb(217, 217, 217);
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+		Arial, sans-serif;
+	line-height: 1.3125;
+	overflow-wrap: break-word;
+	font-weight: lighter;
+	font-size: 8px;
+	text-decoration: none;
+
+}
 
 
 

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-// import axios from 'axios';
+import axios from 'axios';
 import Alert from './Alert';
 import { login, check } from '../login';
+
 
 class Login extends Component {
 	state = { err: "" };
@@ -12,16 +13,21 @@ class Login extends Component {
 		}})
 	}
     login = (e) => {
-        e.preventDefault();
-		login(document.getElementById("email").value,
-			document.getElementById("password").value).then(r => {
-				if (r === true) {
-					window.location = "/"
-				} else {
-					this.setState({ err: r })
-				}
+		e.preventDefault();
+		axios.post("/api/login",
+			{
+				email: document.getElementById("email").value,
+				pwd: document.getElementById("password").value,
 			})
-    };
+			.then((res) => {
+				if (res.data.error) {
+					this.setState({ err: res.data.error });
+				}
+				else {
+					window.location = "/home"
+				}
+				});
+	};
 
     render() {
         return (
